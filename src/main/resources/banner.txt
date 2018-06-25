@@ -1,0 +1,8 @@
+${AnsiColor.YELLOW}
+===================================
+===================================
+===========GuoGuo正在启动程序========
+===================================
+===================================
+${AnsiColor.BRIGHT_BLACK}
+Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}

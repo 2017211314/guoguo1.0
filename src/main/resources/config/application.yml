@@ -1,0 +1,36 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/guomu?characterEncoding=utf8&useSSL=false
+    username: root
+    password: liudaroot
+  jooq:
+    sql-dialect: mysql
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+logging:
+  level:
+    org.jooq.tools.LoggerListener: DEBUG
+  path: C:/logs/guomu.log
+  file:
+    max-size: 10MB
+
+
+
+
+
+
+
+
+
+

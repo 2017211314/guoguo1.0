@@ -1,0 +1,25 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /guomu
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/guomu?characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+  jooq:
+    sql-dialect: mysql
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+
+
+
+
+
