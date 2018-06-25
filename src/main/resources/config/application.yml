@@ -18,6 +18,10 @@ spring:
     servlet:
       content-type: text/html
     cache: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 logging:
   level:
     org.jooq.tools.LoggerListener: DEBUG
