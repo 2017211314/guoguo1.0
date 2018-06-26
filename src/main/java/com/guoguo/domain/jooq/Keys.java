@@ -8,12 +8,10 @@ import com.guoguo.domain.jooq.tables.TPermission;
 import com.guoguo.domain.jooq.tables.TRole;
 import com.guoguo.domain.jooq.tables.TRolePermission;
 import com.guoguo.domain.jooq.tables.TUser;
-import com.guoguo.domain.jooq.tables.TUserRole;
 import com.guoguo.domain.jooq.tables.records.TPermissionRecord;
 import com.guoguo.domain.jooq.tables.records.TRolePermissionRecord;
 import com.guoguo.domain.jooq.tables.records.TRoleRecord;
 import com.guoguo.domain.jooq.tables.records.TUserRecord;
-import com.guoguo.domain.jooq.tables.records.TUserRoleRecord;
 
 import javax.annotation.Generated;
 
@@ -44,7 +42,6 @@ public class Keys {
     public static final Identity<TRoleRecord, Integer> IDENTITY_T_ROLE = Identities0.IDENTITY_T_ROLE;
     public static final Identity<TRolePermissionRecord, Integer> IDENTITY_T_ROLE_PERMISSION = Identities0.IDENTITY_T_ROLE_PERMISSION;
     public static final Identity<TUserRecord, Integer> IDENTITY_T_USER = Identities0.IDENTITY_T_USER;
-    public static final Identity<TUserRoleRecord, Integer> IDENTITY_T_USER_ROLE = Identities0.IDENTITY_T_USER_ROLE;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
@@ -56,7 +53,6 @@ public class Keys {
     public static final UniqueKey<TUserRecord> KEY_T_USER_PRIMARY = UniqueKeys0.KEY_T_USER_PRIMARY;
     public static final UniqueKey<TUserRecord> KEY_T_USER_USERNAME = UniqueKeys0.KEY_T_USER_USERNAME;
     public static final UniqueKey<TUserRecord> KEY_T_USER_PHONE = UniqueKeys0.KEY_T_USER_PHONE;
-    public static final UniqueKey<TUserRoleRecord> KEY_T_USER_ROLE_PRIMARY = UniqueKeys0.KEY_T_USER_ROLE_PRIMARY;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -72,7 +68,6 @@ public class Keys {
         public static Identity<TRoleRecord, Integer> IDENTITY_T_ROLE = Internal.createIdentity(TRole.T_ROLE, TRole.T_ROLE.ID);
         public static Identity<TRolePermissionRecord, Integer> IDENTITY_T_ROLE_PERMISSION = Internal.createIdentity(TRolePermission.T_ROLE_PERMISSION, TRolePermission.T_ROLE_PERMISSION.ID);
         public static Identity<TUserRecord, Integer> IDENTITY_T_USER = Internal.createIdentity(TUser.T_USER, TUser.T_USER.ID);
-        public static Identity<TUserRoleRecord, Integer> IDENTITY_T_USER_ROLE = Internal.createIdentity(TUserRole.T_USER_ROLE, TUserRole.T_USER_ROLE.ID);
     }
 
     private static class UniqueKeys0 {
@@ -82,6 +77,5 @@ public class Keys {
         public static final UniqueKey<TUserRecord> KEY_T_USER_PRIMARY = Internal.createUniqueKey(TUser.T_USER, "KEY_t_user_PRIMARY", TUser.T_USER.ID);
         public static final UniqueKey<TUserRecord> KEY_T_USER_USERNAME = Internal.createUniqueKey(TUser.T_USER, "KEY_t_user_username", TUser.T_USER.USERNAME);
         public static final UniqueKey<TUserRecord> KEY_T_USER_PHONE = Internal.createUniqueKey(TUser.T_USER, "KEY_t_user_phone", TUser.T_USER.PHONE);
-        public static final UniqueKey<TUserRoleRecord> KEY_T_USER_ROLE_PRIMARY = Internal.createUniqueKey(TUserRole.T_USER_ROLE, "KEY_t_user_role_PRIMARY", TUserRole.T_USER_ROLE.ID);
     }
 }

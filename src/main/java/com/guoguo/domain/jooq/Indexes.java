@@ -8,7 +8,6 @@ import com.guoguo.domain.jooq.tables.TPermission;
 import com.guoguo.domain.jooq.tables.TRole;
 import com.guoguo.domain.jooq.tables.TRolePermission;
 import com.guoguo.domain.jooq.tables.TUser;
-import com.guoguo.domain.jooq.tables.TUserRole;
 
 import javax.annotation.Generated;
 
@@ -42,9 +41,6 @@ public class Indexes {
     public static final Index T_USER_PHONE = Indexes0.T_USER_PHONE;
     public static final Index T_USER_PRIMARY = Indexes0.T_USER_PRIMARY;
     public static final Index T_USER_USERNAME = Indexes0.T_USER_USERNAME;
-    public static final Index T_USER_ROLE_PRIMARY = Indexes0.T_USER_ROLE_PRIMARY;
-    public static final Index T_USER_ROLE_ROLEID = Indexes0.T_USER_ROLE_ROLEID;
-    public static final Index T_USER_ROLE_USERID = Indexes0.T_USER_ROLE_USERID;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
@@ -59,8 +55,5 @@ public class Indexes {
         public static Index T_USER_PHONE = Internal.createIndex("phone", TUser.T_USER, new OrderField[] { TUser.T_USER.PHONE }, true);
         public static Index T_USER_PRIMARY = Internal.createIndex("PRIMARY", TUser.T_USER, new OrderField[] { TUser.T_USER.ID }, true);
         public static Index T_USER_USERNAME = Internal.createIndex("username", TUser.T_USER, new OrderField[] { TUser.T_USER.USERNAME }, true);
-        public static Index T_USER_ROLE_PRIMARY = Internal.createIndex("PRIMARY", TUserRole.T_USER_ROLE, new OrderField[] { TUserRole.T_USER_ROLE.ID }, true);
-        public static Index T_USER_ROLE_ROLEID = Internal.createIndex("roleid", TUserRole.T_USER_ROLE, new OrderField[] { TUserRole.T_USER_ROLE.ROLE_ID }, false);
-        public static Index T_USER_ROLE_USERID = Internal.createIndex("userid", TUserRole.T_USER_ROLE, new OrderField[] { TUserRole.T_USER_ROLE.USER_ID }, false);
     }
 }
