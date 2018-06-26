@@ -17,7 +17,7 @@ public interface UserService {
      * 添加用户信息
      * @return
      */
-    Response addUserInfo();
+    Response addUserInfo(String username,String password,String phone);
 
     /**
      * 通过用户名获取角色

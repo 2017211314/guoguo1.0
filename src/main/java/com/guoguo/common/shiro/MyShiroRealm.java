@@ -8,6 +8,7 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -64,7 +65,7 @@ public class MyShiroRealm extends AuthorizingRealm {
             throw new LockedAccountException();
         }
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(tUserObj.getUsername(),
-                tUserObj.getPassword(), getName());
+                tUserObj.getPassword(), ByteSource.Util.bytes(userInfo.get(0).getSalt()),getName());
         return authenticationInfo;
     }
 }

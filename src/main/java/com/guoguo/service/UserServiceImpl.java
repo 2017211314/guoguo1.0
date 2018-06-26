@@ -3,6 +3,7 @@ package com.guoguo.service;
 import com.google.common.collect.Lists;
 import com.guoguo.common.utils.Response;
 import com.guoguo.common.utils.StringTools;
+import com.guoguo.common.utils.UUIDUtil;
 import com.guoguo.domain.jooq.tables.pojos.TPermissionObj;
 import com.guoguo.domain.jooq.tables.pojos.TUserObj;
 import org.springframework.stereotype.Service;
@@ -26,8 +27,13 @@ public class UserServiceImpl extends ServiceBase implements UserService{
      * @return
      */
     @Override
-    public Response addUserInfo() {
+    public Response addUserInfo(String username,String password,String phone) {
+
+
+
+
         return null;
+
     }
 
 
