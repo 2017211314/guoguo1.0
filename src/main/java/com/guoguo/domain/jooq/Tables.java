@@ -4,6 +4,9 @@
 package com.guoguo.domain.jooq;
 
 
+import com.guoguo.domain.jooq.tables.TPermission;
+import com.guoguo.domain.jooq.tables.TRole;
+import com.guoguo.domain.jooq.tables.TRolePermission;
 import com.guoguo.domain.jooq.tables.TUser;
 
 import javax.annotation.Generated;
@@ -21,6 +24,21 @@ import javax.annotation.Generated;
 )
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
+
+    /**
+     * 权限表
+     */
+    public static final TPermission T_PERMISSION = com.guoguo.domain.jooq.tables.TPermission.T_PERMISSION;
+
+    /**
+     * 角色表
+     */
+    public static final TRole T_ROLE = com.guoguo.domain.jooq.tables.TRole.T_ROLE;
+
+    /**
+     * 角色权限表
+     */
+    public static final TRolePermission T_ROLE_PERMISSION = com.guoguo.domain.jooq.tables.TRolePermission.T_ROLE_PERMISSION;
 
     /**
      * 用户表

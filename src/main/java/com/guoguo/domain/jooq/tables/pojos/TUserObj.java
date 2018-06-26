@@ -23,31 +23,28 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TUserObj implements Serializable {
 
-    private static final long serialVersionUID = -1287417136;
+    private static final long serialVersionUID = -1422665567;
 
     private Integer   id;
     private String    username;
     private String    password;
+    private String    salt;
+    private Integer   roleId;
     private String    realName;
     private String    phone;
     private String    email;
     private String    qqNum;
     private String    wechatNum;
     private Integer   score;
-    private String    careerType;
-    private Integer   workTime;
-    private String    specialty;
-    private String    intro;
-    private String    userUrl;
     private String    icon;
     private String    sex;
     private String    address;
-    private Integer   status;
     private String    mcode;
     private Timestamp sendTime;
-    private String    createTime;
+    private Integer   status;
+    private Timestamp createTime;
     private String    createUser;
-    private String    updateTime;
+    private Timestamp updateTime;
     private String    updateUser;
 
     public TUserObj() {}
@@ -56,23 +53,20 @@ public class TUserObj implements Serializable {
         this.id = value.id;
         this.username = value.username;
         this.password = value.password;
+        this.salt = value.salt;
+        this.roleId = value.roleId;
         this.realName = value.realName;
         this.phone = value.phone;
         this.email = value.email;
         this.qqNum = value.qqNum;
         this.wechatNum = value.wechatNum;
         this.score = value.score;
-        this.careerType = value.careerType;
-        this.workTime = value.workTime;
-        this.specialty = value.specialty;
-        this.intro = value.intro;
-        this.userUrl = value.userUrl;
         this.icon = value.icon;
         this.sex = value.sex;
         this.address = value.address;
-        this.status = value.status;
         this.mcode = value.mcode;
         this.sendTime = value.sendTime;
+        this.status = value.status;
         this.createTime = value.createTime;
         this.createUser = value.createUser;
         this.updateTime = value.updateTime;
@@ -83,48 +77,42 @@ public class TUserObj implements Serializable {
         Integer   id,
         String    username,
         String    password,
+        String    salt,
+        Integer   roleId,
         String    realName,
         String    phone,
         String    email,
         String    qqNum,
         String    wechatNum,
         Integer   score,
-        String    careerType,
-        Integer   workTime,
-        String    specialty,
-        String    intro,
-        String    userUrl,
         String    icon,
         String    sex,
         String    address,
-        Integer   status,
         String    mcode,
         Timestamp sendTime,
-        String    createTime,
+        Integer   status,
+        Timestamp createTime,
         String    createUser,
-        String    updateTime,
+        Timestamp updateTime,
         String    updateUser
     ) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.salt = salt;
+        this.roleId = roleId;
         this.realName = realName;
         this.phone = phone;
         this.email = email;
         this.qqNum = qqNum;
         this.wechatNum = wechatNum;
         this.score = score;
-        this.careerType = careerType;
-        this.workTime = workTime;
-        this.specialty = specialty;
-        this.intro = intro;
-        this.userUrl = userUrl;
         this.icon = icon;
         this.sex = sex;
         this.address = address;
-        this.status = status;
         this.mcode = mcode;
         this.sendTime = sendTime;
+        this.status = status;
         this.createTime = createTime;
         this.createUser = createUser;
         this.updateTime = updateTime;
@@ -153,6 +141,22 @@ public class TUserObj implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSalt() {
+        return this.salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public Integer getRoleId() {
+        return this.roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
     public String getRealName() {
@@ -203,46 +207,6 @@ public class TUserObj implements Serializable {
         this.score = score;
     }
 
-    public String getCareerType() {
-        return this.careerType;
-    }
-
-    public void setCareerType(String careerType) {
-        this.careerType = careerType;
-    }
-
-    public Integer getWorkTime() {
-        return this.workTime;
-    }
-
-    public void setWorkTime(Integer workTime) {
-        this.workTime = workTime;
-    }
-
-    public String getSpecialty() {
-        return this.specialty;
-    }
-
-    public void setSpecialty(String specialty) {
-        this.specialty = specialty;
-    }
-
-    public String getIntro() {
-        return this.intro;
-    }
-
-    public void setIntro(String intro) {
-        this.intro = intro;
-    }
-
-    public String getUserUrl() {
-        return this.userUrl;
-    }
-
-    public void setUserUrl(String userUrl) {
-        this.userUrl = userUrl;
-    }
-
     public String getIcon() {
         return this.icon;
     }
@@ -267,14 +231,6 @@ public class TUserObj implements Serializable {
         this.address = address;
     }
 
-    public Integer getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
     public String getMcode() {
         return this.mcode;
     }
@@ -291,11 +247,19 @@ public class TUserObj implements Serializable {
         this.sendTime = sendTime;
     }
 
-    public String getCreateTime() {
+    public Integer getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Timestamp getCreateTime() {
         return this.createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
     }
 
@@ -307,11 +271,11 @@ public class TUserObj implements Serializable {
         this.createUser = createUser;
     }
 
-    public String getUpdateTime() {
+    public Timestamp getUpdateTime() {
         return this.updateTime;
     }
 
-    public void setUpdateTime(String updateTime) {
+    public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
     }
 
@@ -350,6 +314,18 @@ public class TUserObj implements Serializable {
         }
         else if (!password.equals(other.password))
             return false;
+        if (salt == null) {
+            if (other.salt != null)
+                return false;
+        }
+        else if (!salt.equals(other.salt))
+            return false;
+        if (roleId == null) {
+            if (other.roleId != null)
+                return false;
+        }
+        else if (!roleId.equals(other.roleId))
+            return false;
         if (realName == null) {
             if (other.realName != null)
                 return false;
@@ -386,36 +362,6 @@ public class TUserObj implements Serializable {
         }
         else if (!score.equals(other.score))
             return false;
-        if (careerType == null) {
-            if (other.careerType != null)
-                return false;
-        }
-        else if (!careerType.equals(other.careerType))
-            return false;
-        if (workTime == null) {
-            if (other.workTime != null)
-                return false;
-        }
-        else if (!workTime.equals(other.workTime))
-            return false;
-        if (specialty == null) {
-            if (other.specialty != null)
-                return false;
-        }
-        else if (!specialty.equals(other.specialty))
-            return false;
-        if (intro == null) {
-            if (other.intro != null)
-                return false;
-        }
-        else if (!intro.equals(other.intro))
-            return false;
-        if (userUrl == null) {
-            if (other.userUrl != null)
-                return false;
-        }
-        else if (!userUrl.equals(other.userUrl))
-            return false;
         if (icon == null) {
             if (other.icon != null)
                 return false;
@@ -434,12 +380,6 @@ public class TUserObj implements Serializable {
         }
         else if (!address.equals(other.address))
             return false;
-        if (status == null) {
-            if (other.status != null)
-                return false;
-        }
-        else if (!status.equals(other.status))
-            return false;
         if (mcode == null) {
             if (other.mcode != null)
                 return false;
@@ -451,6 +391,12 @@ public class TUserObj implements Serializable {
                 return false;
         }
         else if (!sendTime.equals(other.sendTime))
+            return false;
+        if (status == null) {
+            if (other.status != null)
+                return false;
+        }
+        else if (!status.equals(other.status))
             return false;
         if (createTime == null) {
             if (other.createTime != null)
@@ -486,23 +432,20 @@ public class TUserObj implements Serializable {
         result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
         result = prime * result + ((this.username == null) ? 0 : this.username.hashCode());
         result = prime * result + ((this.password == null) ? 0 : this.password.hashCode());
+        result = prime * result + ((this.salt == null) ? 0 : this.salt.hashCode());
+        result = prime * result + ((this.roleId == null) ? 0 : this.roleId.hashCode());
         result = prime * result + ((this.realName == null) ? 0 : this.realName.hashCode());
         result = prime * result + ((this.phone == null) ? 0 : this.phone.hashCode());
         result = prime * result + ((this.email == null) ? 0 : this.email.hashCode());
         result = prime * result + ((this.qqNum == null) ? 0 : this.qqNum.hashCode());
         result = prime * result + ((this.wechatNum == null) ? 0 : this.wechatNum.hashCode());
         result = prime * result + ((this.score == null) ? 0 : this.score.hashCode());
-        result = prime * result + ((this.careerType == null) ? 0 : this.careerType.hashCode());
-        result = prime * result + ((this.workTime == null) ? 0 : this.workTime.hashCode());
-        result = prime * result + ((this.specialty == null) ? 0 : this.specialty.hashCode());
-        result = prime * result + ((this.intro == null) ? 0 : this.intro.hashCode());
-        result = prime * result + ((this.userUrl == null) ? 0 : this.userUrl.hashCode());
         result = prime * result + ((this.icon == null) ? 0 : this.icon.hashCode());
         result = prime * result + ((this.sex == null) ? 0 : this.sex.hashCode());
         result = prime * result + ((this.address == null) ? 0 : this.address.hashCode());
-        result = prime * result + ((this.status == null) ? 0 : this.status.hashCode());
         result = prime * result + ((this.mcode == null) ? 0 : this.mcode.hashCode());
         result = prime * result + ((this.sendTime == null) ? 0 : this.sendTime.hashCode());
+        result = prime * result + ((this.status == null) ? 0 : this.status.hashCode());
         result = prime * result + ((this.createTime == null) ? 0 : this.createTime.hashCode());
         result = prime * result + ((this.createUser == null) ? 0 : this.createUser.hashCode());
         result = prime * result + ((this.updateTime == null) ? 0 : this.updateTime.hashCode());
@@ -517,23 +460,20 @@ public class TUserObj implements Serializable {
         sb.append(id);
         sb.append(", ").append(username);
         sb.append(", ").append(password);
+        sb.append(", ").append(salt);
+        sb.append(", ").append(roleId);
         sb.append(", ").append(realName);
         sb.append(", ").append(phone);
         sb.append(", ").append(email);
         sb.append(", ").append(qqNum);
         sb.append(", ").append(wechatNum);
         sb.append(", ").append(score);
-        sb.append(", ").append(careerType);
-        sb.append(", ").append(workTime);
-        sb.append(", ").append(specialty);
-        sb.append(", ").append(intro);
-        sb.append(", ").append(userUrl);
         sb.append(", ").append(icon);
         sb.append(", ").append(sex);
         sb.append(", ").append(address);
-        sb.append(", ").append(status);
         sb.append(", ").append(mcode);
         sb.append(", ").append(sendTime);
+        sb.append(", ").append(status);
         sb.append(", ").append(createTime);
         sb.append(", ").append(createUser);
         sb.append(", ").append(updateTime);

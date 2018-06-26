@@ -92,6 +92,20 @@ public class TUserDao extends DAOImpl<TUserRecord, TUserObj, Integer> {
     }
 
     /**
+     * Fetch records that have <code>salt IN (values)</code>
+     */
+    public List<TUserObj> fetchBySalt(String... values) {
+        return fetch(TUser.T_USER.SALT, values);
+    }
+
+    /**
+     * Fetch records that have <code>role_id IN (values)</code>
+     */
+    public List<TUserObj> fetchByRoleId(Integer... values) {
+        return fetch(TUser.T_USER.ROLE_ID, values);
+    }
+
+    /**
      * Fetch records that have <code>real_name IN (values)</code>
      */
     public List<TUserObj> fetchByRealName(String... values) {
@@ -141,41 +155,6 @@ public class TUserDao extends DAOImpl<TUserRecord, TUserObj, Integer> {
     }
 
     /**
-     * Fetch records that have <code>career_type IN (values)</code>
-     */
-    public List<TUserObj> fetchByCareerType(String... values) {
-        return fetch(TUser.T_USER.CAREER_TYPE, values);
-    }
-
-    /**
-     * Fetch records that have <code>work_time IN (values)</code>
-     */
-    public List<TUserObj> fetchByWorkTime(Integer... values) {
-        return fetch(TUser.T_USER.WORK_TIME, values);
-    }
-
-    /**
-     * Fetch records that have <code>specialty IN (values)</code>
-     */
-    public List<TUserObj> fetchBySpecialty(String... values) {
-        return fetch(TUser.T_USER.SPECIALTY, values);
-    }
-
-    /**
-     * Fetch records that have <code>intro IN (values)</code>
-     */
-    public List<TUserObj> fetchByIntro(String... values) {
-        return fetch(TUser.T_USER.INTRO, values);
-    }
-
-    /**
-     * Fetch records that have <code>user_url IN (values)</code>
-     */
-    public List<TUserObj> fetchByUserUrl(String... values) {
-        return fetch(TUser.T_USER.USER_URL, values);
-    }
-
-    /**
      * Fetch records that have <code>icon IN (values)</code>
      */
     public List<TUserObj> fetchByIcon(String... values) {
@@ -197,13 +176,6 @@ public class TUserDao extends DAOImpl<TUserRecord, TUserObj, Integer> {
     }
 
     /**
-     * Fetch records that have <code>status IN (values)</code>
-     */
-    public List<TUserObj> fetchByStatus(Integer... values) {
-        return fetch(TUser.T_USER.STATUS, values);
-    }
-
-    /**
      * Fetch records that have <code>mcode IN (values)</code>
      */
     public List<TUserObj> fetchByMcode(String... values) {
@@ -218,9 +190,16 @@ public class TUserDao extends DAOImpl<TUserRecord, TUserObj, Integer> {
     }
 
     /**
+     * Fetch records that have <code>status IN (values)</code>
+     */
+    public List<TUserObj> fetchByStatus(Integer... values) {
+        return fetch(TUser.T_USER.STATUS, values);
+    }
+
+    /**
      * Fetch records that have <code>create_time IN (values)</code>
      */
-    public List<TUserObj> fetchByCreateTime(String... values) {
+    public List<TUserObj> fetchByCreateTime(Timestamp... values) {
         return fetch(TUser.T_USER.CREATE_TIME, values);
     }
 
@@ -234,7 +213,7 @@ public class TUserDao extends DAOImpl<TUserRecord, TUserObj, Integer> {
     /**
      * Fetch records that have <code>update_time IN (values)</code>
      */
-    public List<TUserObj> fetchByUpdateTime(String... values) {
+    public List<TUserObj> fetchByUpdateTime(Timestamp... values) {
         return fetch(TUser.T_USER.UPDATE_TIME, values);
     }
 

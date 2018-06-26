@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TUser extends TableImpl<TUserRecord> {
 
-    private static final long serialVersionUID = -1704971441;
+    private static final long serialVersionUID = -404743755;
 
     /**
      * The reference instance of <code>guoguo.t_user</code>
@@ -61,14 +61,24 @@ public class TUser extends TableImpl<TUserRecord> {
     public final TableField<TUserRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false).identity(true), this, "");
 
     /**
-     * The column <code>guoguo.t_user.username</code>. 登陆名
+     * The column <code>guoguo.t_user.username</code>. 登录名
      */
-    public final TableField<TUserRecord, String> USERNAME = createField("username", org.jooq.impl.SQLDataType.VARCHAR(20).nullable(false), this, "登陆名");
+    public final TableField<TUserRecord, String> USERNAME = createField("username", org.jooq.impl.SQLDataType.VARCHAR(20).nullable(false), this, "登录名");
 
     /**
-     * The column <code>guoguo.t_user.password</code>. 登陆密码，加密存储
+     * The column <code>guoguo.t_user.password</code>. 登录密码，加密存储
      */
-    public final TableField<TUserRecord, String> PASSWORD = createField("password", org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false), this, "登陆密码，加密存储");
+    public final TableField<TUserRecord, String> PASSWORD = createField("password", org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false), this, "登录密码，加密存储");
+
+    /**
+     * The column <code>guoguo.t_user.salt</code>. 密码盐
+     */
+    public final TableField<TUserRecord, String> SALT = createField("salt", org.jooq.impl.SQLDataType.VARCHAR(20).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "密码盐");
+
+    /**
+     * The column <code>guoguo.t_user.role_id</code>. 1-普通用户
+     */
+    public final TableField<TUserRecord, Integer> ROLE_ID = createField("role_id", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.inline("1", org.jooq.impl.SQLDataType.INTEGER)), this, "1-普通用户");
 
     /**
      * The column <code>guoguo.t_user.real_name</code>. 真实姓名
@@ -101,34 +111,9 @@ public class TUser extends TableImpl<TUserRecord> {
     public final TableField<TUserRecord, Integer> SCORE = createField("score", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.INTEGER)), this, "用户积分");
 
     /**
-     * The column <code>guoguo.t_user.career_type</code>. 职业类型
-     */
-    public final TableField<TUserRecord, String> CAREER_TYPE = createField("career_type", org.jooq.impl.SQLDataType.VARCHAR(20).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "职业类型");
-
-    /**
-     * The column <code>guoguo.t_user.work_time</code>. 工作年限
-     */
-    public final TableField<TUserRecord, Integer> WORK_TIME = createField("work_time", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.INTEGER)), this, "工作年限");
-
-    /**
-     * The column <code>guoguo.t_user.specialty</code>. 擅长
-     */
-    public final TableField<TUserRecord, String> SPECIALTY = createField("specialty", org.jooq.impl.SQLDataType.VARCHAR(255).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "擅长");
-
-    /**
-     * The column <code>guoguo.t_user.intro</code>. 简介
-     */
-    public final TableField<TUserRecord, String> INTRO = createField("intro", org.jooq.impl.SQLDataType.VARCHAR(255).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "简介");
-
-    /**
-     * The column <code>guoguo.t_user.user_url</code>. 个人网址
-     */
-    public final TableField<TUserRecord, String> USER_URL = createField("user_url", org.jooq.impl.SQLDataType.VARCHAR(200).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "个人网址");
-
-    /**
      * The column <code>guoguo.t_user.icon</code>. 头像
      */
-    public final TableField<TUserRecord, String> ICON = createField("icon", org.jooq.impl.SQLDataType.VARCHAR(255).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "头像");
+    public final TableField<TUserRecord, String> ICON = createField("icon", org.jooq.impl.SQLDataType.VARCHAR(100).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "头像");
 
     /**
      * The column <code>guoguo.t_user.sex</code>. 性别：1-男，2-女，3-保密
@@ -141,11 +126,6 @@ public class TUser extends TableImpl<TUserRecord> {
     public final TableField<TUserRecord, String> ADDRESS = createField("address", org.jooq.impl.SQLDataType.VARCHAR(255).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "地址");
 
     /**
-     * The column <code>guoguo.t_user.status</code>. 用户帐号状态：1-正常，2-锁定,3-删除
-     */
-    public final TableField<TUserRecord, Integer> STATUS = createField("status", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.inline("2", org.jooq.impl.SQLDataType.INTEGER)), this, "用户帐号状态：1-正常，2-锁定,3-删除");
-
-    /**
      * The column <code>guoguo.t_user.mcode</code>. 短信验证码
      */
     public final TableField<TUserRecord, String> MCODE = createField("mcode", org.jooq.impl.SQLDataType.VARCHAR(10).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "短信验证码");
@@ -156,24 +136,29 @@ public class TUser extends TableImpl<TUserRecord> {
     public final TableField<TUserRecord, Timestamp> SEND_TIME = createField("send_time", org.jooq.impl.SQLDataType.TIMESTAMP, this, "短信发送时间");
 
     /**
+     * The column <code>guoguo.t_user.status</code>. 用户帐号状态：1-正常，2-锁定,3-删除
+     */
+    public final TableField<TUserRecord, Integer> STATUS = createField("status", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.inline("2", org.jooq.impl.SQLDataType.INTEGER)), this, "用户帐号状态：1-正常，2-锁定,3-删除");
+
+    /**
      * The column <code>guoguo.t_user.create_time</code>. 创建时间
      */
-    public final TableField<TUserRecord, String> CREATE_TIME = createField("create_time", org.jooq.impl.SQLDataType.VARCHAR(18).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "创建时间");
+    public final TableField<TUserRecord, Timestamp> CREATE_TIME = createField("create_time", org.jooq.impl.SQLDataType.TIMESTAMP, this, "创建时间");
 
     /**
      * The column <code>guoguo.t_user.create_user</code>. 创建人
      */
-    public final TableField<TUserRecord, String> CREATE_USER = createField("create_user", org.jooq.impl.SQLDataType.VARCHAR(20).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "创建人");
+    public final TableField<TUserRecord, String> CREATE_USER = createField("create_user", org.jooq.impl.SQLDataType.VARCHAR(20), this, "创建人");
 
     /**
      * The column <code>guoguo.t_user.update_time</code>. 更新时间
      */
-    public final TableField<TUserRecord, String> UPDATE_TIME = createField("update_time", org.jooq.impl.SQLDataType.VARCHAR(18).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "更新时间");
+    public final TableField<TUserRecord, Timestamp> UPDATE_TIME = createField("update_time", org.jooq.impl.SQLDataType.TIMESTAMP, this, "更新时间");
 
     /**
      * The column <code>guoguo.t_user.update_user</code>. 更新人
      */
-    public final TableField<TUserRecord, String> UPDATE_USER = createField("update_user", org.jooq.impl.SQLDataType.VARCHAR(20).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "更新人");
+    public final TableField<TUserRecord, String> UPDATE_USER = createField("update_user", org.jooq.impl.SQLDataType.VARCHAR(20), this, "更新人");
 
     /**
      * Create a <code>guoguo.t_user</code> table reference
