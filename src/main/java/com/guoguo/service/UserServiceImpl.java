@@ -11,6 +11,9 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 
 import static com.guoguo.domain.jooq.Tables.*;
@@ -113,6 +116,8 @@ public class UserServiceImpl extends ServiceBase implements UserService{
             tUserRecord.setUsername(username);
             tUserRecord.setPassword(newPassword);
             tUserRecord.setPhone(phone);
+            tUserRecord.setCreateTime(Timestamp.valueOf(LocalDateTime.now()));
+            tUserRecord.setCreateUser(username);
             int i = create.insertInto(T_USER).set(tUserRecord).execute();
             if(i ==1){
                 return true;
