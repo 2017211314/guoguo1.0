@@ -65,7 +65,7 @@ public class MyShiroRealm extends AuthorizingRealm {
             throw new LockedAccountException();
         }
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(tUserObj.getUsername(),
-                tUserObj.getPassword(), ByteSource.Util.bytes(userInfo.get(0).getSalt()),getName());
+                tUserObj.getPassword(), ByteSource.Util.bytes(tUserObj.getUsername()),getName());
         return authenticationInfo;
     }
 }

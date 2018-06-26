@@ -23,12 +23,11 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TUserObj implements Serializable {
 
-    private static final long serialVersionUID = -1422665567;
+    private static final long serialVersionUID = 314843253;
 
     private Integer   id;
     private String    username;
     private String    password;
-    private String    salt;
     private Integer   roleId;
     private String    realName;
     private String    phone;
@@ -53,7 +52,6 @@ public class TUserObj implements Serializable {
         this.id = value.id;
         this.username = value.username;
         this.password = value.password;
-        this.salt = value.salt;
         this.roleId = value.roleId;
         this.realName = value.realName;
         this.phone = value.phone;
@@ -77,7 +75,6 @@ public class TUserObj implements Serializable {
         Integer   id,
         String    username,
         String    password,
-        String    salt,
         Integer   roleId,
         String    realName,
         String    phone,
@@ -99,7 +96,6 @@ public class TUserObj implements Serializable {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.salt = salt;
         this.roleId = roleId;
         this.realName = realName;
         this.phone = phone;
@@ -141,14 +137,6 @@ public class TUserObj implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getSalt() {
-        return this.salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
     }
 
     public Integer getRoleId() {
@@ -314,12 +302,6 @@ public class TUserObj implements Serializable {
         }
         else if (!password.equals(other.password))
             return false;
-        if (salt == null) {
-            if (other.salt != null)
-                return false;
-        }
-        else if (!salt.equals(other.salt))
-            return false;
         if (roleId == null) {
             if (other.roleId != null)
                 return false;
@@ -432,7 +414,6 @@ public class TUserObj implements Serializable {
         result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
         result = prime * result + ((this.username == null) ? 0 : this.username.hashCode());
         result = prime * result + ((this.password == null) ? 0 : this.password.hashCode());
-        result = prime * result + ((this.salt == null) ? 0 : this.salt.hashCode());
         result = prime * result + ((this.roleId == null) ? 0 : this.roleId.hashCode());
         result = prime * result + ((this.realName == null) ? 0 : this.realName.hashCode());
         result = prime * result + ((this.phone == null) ? 0 : this.phone.hashCode());
@@ -460,7 +441,6 @@ public class TUserObj implements Serializable {
         sb.append(id);
         sb.append(", ").append(username);
         sb.append(", ").append(password);
-        sb.append(", ").append(salt);
         sb.append(", ").append(roleId);
         sb.append(", ").append(realName);
         sb.append(", ").append(phone);

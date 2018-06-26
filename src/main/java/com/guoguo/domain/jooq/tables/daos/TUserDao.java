@@ -92,13 +92,6 @@ public class TUserDao extends DAOImpl<TUserRecord, TUserObj, Integer> {
     }
 
     /**
-     * Fetch records that have <code>salt IN (values)</code>
-     */
-    public List<TUserObj> fetchBySalt(String... values) {
-        return fetch(TUser.T_USER.SALT, values);
-    }
-
-    /**
      * Fetch records that have <code>role_id IN (values)</code>
      */
     public List<TUserObj> fetchByRoleId(Integer... values) {

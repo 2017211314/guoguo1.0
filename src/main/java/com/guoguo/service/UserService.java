@@ -14,10 +14,12 @@ import java.util.Set;
 public interface UserService {
 
     /**
-     * 添加用户信息
+     * 注册功能
+     * @param username 用户名
+     * @param password 密码
      * @return
      */
-    Response addUserInfo(String username,String password,String phone);
+    public boolean registerUserInfo(String username, String password,String phone);
 
     /**
      * 通过用户名获取角色

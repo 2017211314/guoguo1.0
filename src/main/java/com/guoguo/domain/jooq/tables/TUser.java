@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TUser extends TableImpl<TUserRecord> {
 
-    private static final long serialVersionUID = -1141739237;
+    private static final long serialVersionUID = 969176460;
 
     /**
      * The reference instance of <code>guoguo.t_user</code>
@@ -69,11 +69,6 @@ public class TUser extends TableImpl<TUserRecord> {
      * The column <code>guoguo.t_user.password</code>. 登录密码，加密存储
      */
     public final TableField<TUserRecord, String> PASSWORD = createField("password", org.jooq.impl.SQLDataType.VARCHAR(50).nullable(false), this, "登录密码，加密存储");
-
-    /**
-     * The column <code>guoguo.t_user.salt</code>. 密码盐
-     */
-    public final TableField<TUserRecord, String> SALT = createField("salt", org.jooq.impl.SQLDataType.VARCHAR(20).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "密码盐");
 
     /**
      * The column <code>guoguo.t_user.role_id</code>. 角色Id 1-普通用户
