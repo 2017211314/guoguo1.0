@@ -8,6 +8,7 @@ import com.guoguo.domain.jooq.tables.TPermission;
 import com.guoguo.domain.jooq.tables.TRole;
 import com.guoguo.domain.jooq.tables.TRolePermission;
 import com.guoguo.domain.jooq.tables.TUser;
+import com.guoguo.domain.jooq.tables.TUserRole;
 
 import javax.annotation.Generated;
 
@@ -44,4 +45,9 @@ public class Tables {
      * 用户表
      */
     public static final TUser T_USER = com.guoguo.domain.jooq.tables.TUser.T_USER;
+
+    /**
+     * 用户角色表
+     */
+    public static final TUserRole T_USER_ROLE = com.guoguo.domain.jooq.tables.TUserRole.T_USER_ROLE;
 }

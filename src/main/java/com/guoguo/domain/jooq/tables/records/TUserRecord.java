@@ -30,7 +30,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TUserRecord extends UpdatableRecordImpl<TUserRecord> implements Record21<Integer, String, String, String, Integer, String, String, String, String, String, Integer, String, String, String, String, Timestamp, Integer, Timestamp, String, Timestamp, String> {
 
-    private static final long serialVersionUID = 503295231;
+    private static final long serialVersionUID = 1986529401;
 
     /**
      * Setter for <code>guoguo.t_user.id</code>.
@@ -89,14 +89,14 @@ public class TUserRecord extends UpdatableRecordImpl<TUserRecord> implements Rec
     }
 
     /**
-     * Setter for <code>guoguo.t_user.role_id</code>. 1-普通用户
+     * Setter for <code>guoguo.t_user.role_id</code>. 角色Id 1-普通用户
      */
     public void setRoleId(Integer value) {
         set(4, value);
     }
 
     /**
-     * Getter for <code>guoguo.t_user.role_id</code>. 1-普通用户
+     * Getter for <code>guoguo.t_user.role_id</code>. 角色Id 1-普通用户
      */
     public Integer getRoleId() {
         return (Integer) get(4);

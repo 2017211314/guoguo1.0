@@ -8,6 +8,7 @@ import com.guoguo.domain.jooq.tables.TPermission;
 import com.guoguo.domain.jooq.tables.TRole;
 import com.guoguo.domain.jooq.tables.TRolePermission;
 import com.guoguo.domain.jooq.tables.TUser;
+import com.guoguo.domain.jooq.tables.TUserRole;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,7 +34,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Guoguo extends SchemaImpl {
 
-    private static final long serialVersionUID = 1724455470;
+    private static final long serialVersionUID = -1577505813;
 
     /**
      * The reference instance of <code>guoguo</code>
@@ -59,6 +60,11 @@ public class Guoguo extends SchemaImpl {
      * 用户表
      */
     public final TUser T_USER = com.guoguo.domain.jooq.tables.TUser.T_USER;
+
+    /**
+     * 用户角色表
+     */
+    public final TUserRole T_USER_ROLE = com.guoguo.domain.jooq.tables.TUserRole.T_USER_ROLE;
 
     /**
      * No further instances allowed
@@ -88,6 +94,7 @@ public class Guoguo extends SchemaImpl {
             TPermission.T_PERMISSION,
             TRole.T_ROLE,
             TRolePermission.T_ROLE_PERMISSION,
-            TUser.T_USER);
+            TUser.T_USER,
+            TUserRole.T_USER_ROLE);
     }
 }
